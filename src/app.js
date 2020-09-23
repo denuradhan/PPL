@@ -22,10 +22,7 @@ decrButton.addEventListener("click", () => {
 });
 
 priceInput.addEventListener("focusout", () => {
-  document.getElementById("price").value = lib.isNumber(
-    priceInput.id,
-    priceInput.value
-  );
+  priceInput.value = lib.isNumber(priceInput.id, priceInput.value);
   subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
 });
 
@@ -39,9 +36,6 @@ codeButton.addEventListener("click", () => {
 });
 
 qtyInput.addEventListener("focusout", () => {
-  document.getElementById("qty").value = lib.isNumber(
-    qtyInput.id,
-    qtyInput.value
-  );
+  priceInput.value = lib.isNumber(qtyInput.id, qtyInput.value);
   subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
 });
