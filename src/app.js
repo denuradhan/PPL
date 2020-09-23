@@ -11,13 +11,13 @@ const codeButton = document.querySelector("#confirmButton");
 
 incrButton.addEventListener("click", () => {
   qtyInput.value = lib.incrementQty(qtyInput.value);
-  count();
+  subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
 });
 
 decrButton.addEventListener("click", () => {
   if (qtyInput.value > 1) {
     qtyInput.value = lib.decrementQty(qtyInput.value);
-    count();
+    subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
   }
 });
 
@@ -26,15 +26,15 @@ priceInput.addEventListener("focusout", () => {
     priceInput.id,
     priceInput.value
   );
-  count();
+  subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
 });
 
 codeButton.addEventListener("click", () => {
   if (codeInput.value === "LAZADA") {
     subTotal.value = subTotal.value - subTotal.value * 0.25;
-    document.getElementById("subtotal").textContent = subTotal.value;
+    subTotal.textContent = subTotal.value;
   } else {
-    count();
+    subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
   }
 });
 
@@ -43,10 +43,5 @@ qtyInput.addEventListener("focusout", () => {
     qtyInput.id,
     qtyInput.value
   );
-  count();
+  subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
 });
-
-function count() {
-  subTotal.value = lib.getSubTotal(priceInput.value, qtyInput.value);
-  document.getElementById("subtotal").textContent = subTotal.value;
-}
