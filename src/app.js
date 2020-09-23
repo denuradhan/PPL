@@ -21,21 +21,21 @@ decrButton.addEventListener("click", () => {
   }
 });
 
-priceInput.addEventListener("focusout", () => {
-  priceInput.value = lib.isNumber(priceInput.id, priceInput.value);
-  subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
-});
-
 codeButton.addEventListener("click", () => {
   if (codeInput.value === "LAZADA") {
-    subTotal.value = subTotal.value - subTotal.value * 0.25;
-    subTotal.textContent = subTotal.value;
+    subTotal.textContent = subTotal.textContent - subTotal.textContent * 0.25;
+    console.log(subTotal.textContent);
   } else {
     subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
   }
 });
 
+priceInput.addEventListener("focusout", () => {
+  priceInput.value = lib.isNumber(priceInput.id, priceInput.value);
+  subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
+});
+
 qtyInput.addEventListener("focusout", () => {
-  priceInput.value = lib.isNumber(qtyInput.id, qtyInput.value);
+  qtyInput.value = lib.isNumber(qtyInput.id, qtyInput.value);
   subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
 });

@@ -17,6 +17,7 @@ function isNumber(vId, vValue) {
   }
   return vValue;
 }
+
 module.exports = {
   incrementQty,
   decrementQty,
