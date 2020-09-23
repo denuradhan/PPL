@@ -8,7 +8,15 @@
 
 const helpers = require("../helpers");
 
-test(" multiplication of 50000(price) * 2(qty) to equal 100000", () => {
+test("increment of 1 is 2", () => {
+  expect(helpers.incrementQty(1)).toBe(2);
+});
+
+test("decrement of 2 is 1", () => {
+  expect(helpers.decrementQty(2)).toBe(1);
+});
+
+test("multiplication of 50000(price) * 2(qty) to equal 100000", () => {
   expect(helpers.getSubTotal(50000, 2)).toBe(100000);
 });
 
