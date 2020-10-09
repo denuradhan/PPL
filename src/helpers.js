@@ -18,9 +18,18 @@ function isNumber(vId, vValue) {
   return vValue;
 }
 
+function isDiscount(value) {
+  if (value === "LAZADA" || value === "Zalora") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 module.exports = {
   incrementQty,
   decrementQty,
   getSubTotal,
   isNumber,
+  isDiscount,
 };
