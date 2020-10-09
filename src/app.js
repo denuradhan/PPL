@@ -24,7 +24,6 @@ decrButton.addEventListener("click", () => {
 codeButton.addEventListener("click", () => {
   if (codeInput.value === "LAZADA") {
     subTotal.textContent = subTotal.textContent - subTotal.textContent * 0.25;
-    console.log(subTotal.textContent);
   } else {
     subTotal.textContent = lib.getSubTotal(priceInput.value, qtyInput.value);
   }
