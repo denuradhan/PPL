@@ -23,3 +23,11 @@ test("multiplication of 50000(price) * 2(qty) to equal 100000", () => {
 test("checking wheter input 'w' is a number?", () => {
   expect(helpers.isNumber("otherID", "w")).toBe("0");
 });
+
+test("checking wheter input 'a' is a number?", () => {
+  expect(helpers.isNumber("otherID", "a")).toBe("0");
+});
+
+test("multiplication of 5(price) * 2(qty) to equal 10", () => {
+  expect(helpers.getSubTotal(5, 2)).toBe(10);
+});
